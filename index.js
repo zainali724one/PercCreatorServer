@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const uploadFileRoutes = require("./routes/uploadFileRoutes");
+const generateReplicateRoutes = require("./routes/generateReplicateRoutes");
 
 const app = express();
 const PORT = 3000;
@@ -10,7 +11,7 @@ const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:5501",
   "https://letsgomanga.com",
-  "http://127.0.0.1:5501"
+  "http://127.0.0.1:5501",
 ];
 
 app.use(
@@ -37,8 +38,8 @@ app.use(bodyParser.json());
 // Routes
 
 app.use(`/api`, uploadFileRoutes);
-// CLIENT_ID=832861452898-icpkrq7gi151jhb4h1ktqo26jqq214ql.apps.googleusercontent.com  testing only
-// CLIENT_SECRET=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
+
+app.use(`/api`, generateReplicateRoutes);
 
 app.get("/", (req, res) => res.send("api is running!"));
 

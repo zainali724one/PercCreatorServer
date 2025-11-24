@@ -2,7 +2,7 @@ const Replicate = require("replicate");
 
 // Initialize Replicate with your token
 const replicate = new Replicate({
-  auth: "r8_HB4Eg4JO85IUxwfcaKszG51WFP5goZI43jt5h", // ⚠️ Ideally store this in a .env file
+  auth: "r8_HB4Eg4JO85IUxwfcaKszG51WFP5goZI43jt5h",
 });
 
 async function generateReplicate(req, res) {
